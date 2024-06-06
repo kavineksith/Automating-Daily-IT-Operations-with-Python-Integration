@@ -60,7 +60,10 @@ The `PortScanner` class encapsulates the functionality required for port scannin
   - `print_results(self)`: Prints the lists of open and closed ports.
 
 **Conclusion:**
-
 The `port_scanner.py` script provides a simple yet effective solution for network port scanning tasks. By leveraging Python's socket library, it enables users to identify open and closed ports on a target machine within a specified port range. This tool can be utilized by network administrators, security professionals, and system analysts to assess network security and diagnose connectivity issues.
 
+## **License**
+This project is licensed under the MIT License. See the [LICENSE](https://github.com/kavineksith/Automating-Daily-IT-Operations-with-Python-Integration/blob/main/LICENSE) file for details.
+
+### **Disclaimer:**
 Kindly note that this project is developed solely for educational purposes, not intended for industrial use, as its sole intention lies within the realm of education. We emphatically underscore that this endeavor is not sanctioned for industrial application. It is imperative to bear in mind that any utilization of this project for commercial endeavors falls outside the intended scope and responsibility of its creators. Thus, we explicitly disclaim any liability or accountability for such usage.

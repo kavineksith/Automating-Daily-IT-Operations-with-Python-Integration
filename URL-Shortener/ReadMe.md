@@ -28,4 +28,8 @@ The URL Shortener script provides a command-line interface for shortening URLs u
 ### Conclusion
 This script simplifies URL shortening and redirection through a command-line interface, providing a convenient way to create shorter versions of long URLs for sharing or embedding in messages. By utilizing a hashing algorithm, it ensures that each long URL is consistently mapped to the same short URL, enabling reliable redirection. With its intuitive menu system, users can easily interact with the URL Shortener without needing a separate application.
 
+## **License**
+This project is licensed under the MIT License. See the [LICENSE](https://github.com/kavineksith/Automating-Daily-IT-Operations-with-Python-Integration/blob/main/LICENSE) file for details.
+
+### **Disclaimer:**
 Kindly note that this project is developed solely for educational purposes, not intended for industrial use, as its sole intention lies within the realm of education. We emphatically underscore that this endeavor is not sanctioned for industrial application. It is imperative to bear in mind that any utilization of this project for commercial endeavors falls outside the intended scope and responsibility of its creators. Thus, we explicitly disclaim any liability or accountability for such usage.

@@ -34,3 +34,9 @@ This Python script facilitates the conversion of Markdown files to HTML format. 
 
 ## Conclusion
 The Markdown to HTML Converter script offers a simple yet effective solution for converting Markdown content to HTML format. With its intuitive interface and robust error handling, it provides a seamless conversion experience for users.
+
+## **License**
+This project is licensed under the MIT License. See the [LICENSE](https://github.com/kavineksith/Automating-Daily-IT-Operations-with-Python-Integration/blob/main/LICENSE) file for details.
+
+### **Disclaimer:**
+Kindly note that this project is developed solely for educational purposes, not intended for industrial use, as its sole intention lies within the realm of education. We emphatically underscore that this endeavor is not sanctioned for industrial application. It is imperative to bear in mind that any utilization of this project for commercial endeavors falls outside the intended scope and responsibility of its creators. Thus, we explicitly disclaim any liability or accountability for such usage.

@@ -79,3 +79,9 @@ These Python scripts provide a diverse set of tools for managing files and direc
 As the curtain falls on this digital odyssey, let us reiterate: this project stands as a beacon of education, not a vessel for commercial endeavors. While its potential is boundless, its purpose remains rooted in the realm of learning. Thus, we absolve ourselves of any responsibility for its usage beyond the confines of educational exploration. Let knowledge be your guide, and may Python light the path to new discoveries.
 
 *Tailor each script with surgical precision, sculpting bespoke solutions to cater to the unique needs of every user. Embrace the spirit of continuous improvement, as upgrades and customization stand as testament to Python's adaptability and resilience.*
+
+## **License**
+This project is licensed under the MIT License. See the [LICENSE](https://github.com/kavineksith/Automating-Daily-IT-Operations-with-Python-Integration/blob/main/LICENSE) file for details.
+
+### **Disclaimer:**
+Kindly note that this project is developed solely for educational purposes, not intended for industrial use, as its sole intention lies within the realm of education. We emphatically underscore that this endeavor is not sanctioned for industrial application. It is imperative to bear in mind that any utilization of this project for commercial endeavors falls outside the intended scope and responsibility of its creators. Thus, we explicitly disclaim any liability or accountability for such usage.

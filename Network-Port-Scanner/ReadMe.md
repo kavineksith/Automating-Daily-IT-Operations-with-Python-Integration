@@ -100,4 +100,8 @@ The script incorporates robust error handling to gracefully handle exceptions an
 ### Conclusion
 The Port Scanner script provides a versatile tool for network administrators and security professionals to analyze the status of ports on a target system, identify services running on those ports, and gather additional information where available. This enhanced documentation provides comprehensive details about the `PortScanner` class, its attributes, and methods, along with the expected output format. 
 
+## **License**
+This project is licensed under the MIT License. See the [LICENSE](https://github.com/kavineksith/Automating-Daily-IT-Operations-with-Python-Integration/blob/main/LICENSE) file for details.
+
+### **Disclaimer:**
 Kindly note that this project is developed solely for educational purposes, not intended for industrial use, as its sole intention lies within the realm of education. We emphatically underscore that this endeavor is not sanctioned for industrial application. It is imperative to bear in mind that any utilization of this project for commercial endeavors falls outside the intended scope and responsibility of its creators. Thus, we explicitly disclaim any liability or accountability for such usage.

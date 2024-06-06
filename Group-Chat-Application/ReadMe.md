@@ -43,4 +43,8 @@ Once logged in, you will see a menu with various options:
 ### Conclusion
 This chat application provides a secure and user-friendly platform for communication between users. By leveraging encryption techniques and secure storage practices, it ensures confidentiality and integrity of user data and messages.
 
+## **License**
+This project is licensed under the MIT License. See the [LICENSE](https://github.com/kavineksith/Automating-Daily-IT-Operations-with-Python-Integration/blob/main/LICENSE) file for details.
+
+### **Disclaimer:**
 Kindly note that this project is developed solely for educational purposes, not intended for industrial use, as its sole intention lies within the realm of education. We emphatically underscore that this endeavor is not sanctioned for industrial application. It is imperative to bear in mind that any utilization of this project for commercial endeavors falls outside the intended scope and responsibility of its creators. Thus, we explicitly disclaim any liability or accountability for such usage.

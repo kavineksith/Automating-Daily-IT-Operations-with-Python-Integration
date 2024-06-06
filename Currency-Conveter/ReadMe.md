@@ -33,4 +33,8 @@ This Python script provides a simple command-line interface for converting curre
 ### Conclusion
 This script provides a convenient way to convert currencies using real-time exchange rates from the Open Exchange Rates API. It offers flexibility in specifying the base and target currencies, making it suitable for various currency conversion needs. With its simple command-line interface, users can quickly perform currency conversions without the need for complex setups.
 
+## **License**
+This project is licensed under the MIT License. See the [LICENSE](https://github.com/kavineksith/Automating-Daily-IT-Operations-with-Python-Integration/blob/main/LICENSE) file for details.
+
+### **Disclaimer:**
 Kindly note that this project is developed solely for educational purposes, not intended for industrial use, as its sole intention lies within the realm of education. We emphatically underscore that this endeavor is not sanctioned for industrial application. It is imperative to bear in mind that any utilization of this project for commercial endeavors falls outside the intended scope and responsibility of its creators. Thus, we explicitly disclaim any liability or accountability for such usage.

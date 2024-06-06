@@ -50,3 +50,9 @@ These dependencies are essential for the proper execution and functionality of t
 
 ## Conclusion
 The Secure Email Sender script provides a robust solution for sending emails securely, protecting sensitive configuration details through encryption. Its versatility allows for various email transmission scenarios, making it suitable for both personal and professional use cases.
+
+## **License**
+This project is licensed under the MIT License. See the [LICENSE](https://github.com/kavineksith/Automating-Daily-IT-Operations-with-Python-Integration/blob/main/LICENSE) file for details.
+
+### **Disclaimer:**
+Kindly note that this project is developed solely for educational purposes, not intended for industrial use, as its sole intention lies within the realm of education. We emphatically underscore that this endeavor is not sanctioned for industrial application. It is imperative to bear in mind that any utilization of this project for commercial endeavors falls outside the intended scope and responsibility of its creators. Thus, we explicitly disclaim any liability or accountability for such usage.

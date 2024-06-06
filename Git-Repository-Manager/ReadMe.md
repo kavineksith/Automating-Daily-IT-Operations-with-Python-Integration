@@ -42,4 +42,8 @@ This Python script serves as a command-line tool for managing Git repositories. 
 ### Conclusion
 This script provides a convenient way to manage Git repositories through a command-line interface. It simplifies common Git operations such as adding files, committing changes, and pushing to remote repositories, making Git workflow more efficient. With its intuitive menu system, users can easily perform repository management tasks without needing to memorize Git commands.
 
+## **License**
+This project is licensed under the MIT License. See the [LICENSE](https://github.com/kavineksith/Automating-Daily-IT-Operations-with-Python-Integration/blob/main/LICENSE) file for details.
+
+### **Disclaimer:**
 Kindly note that this project is developed solely for educational purposes, not intended for industrial use, as its sole intention lies within the realm of education. We emphatically underscore that this endeavor is not sanctioned for industrial application. It is imperative to bear in mind that any utilization of this project for commercial endeavors falls outside the intended scope and responsibility of its creators. Thus, we explicitly disclaim any liability or accountability for such usage.
