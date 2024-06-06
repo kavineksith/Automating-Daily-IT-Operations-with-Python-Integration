@@ -1,0 +1,15 @@
+Hello,
+
+This is an automated email from our system.
+
+Sender Email: {{sender_email}}
+Receiver Email: {{receiver_email}}
+Subject: {{subject}}
+
+Message:
+{{message}}
+
+Please find the attached files.
+
+Best regards,
+Your Company
