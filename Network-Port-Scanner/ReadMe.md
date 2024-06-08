@@ -1,104 +1,66 @@
-## Documentation: Port Scanner Script
+**Port Scanner Documentation**
 
-### Overview
-The Port Scanner is a Python script designed to scan TCP, UDP, and ICMP ports on a specified IP address within a given range of ports. It utilizes socket programming to establish connections and retrieve information about the status of ports, services running on those ports, and banners where available.
+**Introduction:**
 
-### Usage
-To use the Port Scanner script, follow these steps:
+This document provides a comprehensive overview of a Python script designed for network port scanning. The script utilizes the socket library to scan for open and closed ports within a specified range on a given IP address. This tool can be used for network analysis, security auditing, and troubleshooting purposes.
 
-1. **Installation**: Ensure you have Python installed on your system. The script is compatible with Python 3.
+**Script Overview:**
 
-2. **Execution**: Run the script from the command line with the following command:
-   ```
-   python port_scanner.py ip_address start_port end_port protocol [output_file]
-   ```
-   - `ip_address`: The IP address of the target host.
-   - `start_port`: The starting port number of the port range to scan.
-   - `end_port`: The ending port number of the port range to scan.
-   - `protocol`: The protocol to use for scanning. Supported protocols are TCP, UDP, and ICMP.
-   - `[output_file]` (optional): Specify an output file to save the scan results in CSV format.
+The provided script, named `port_scanner.py`, is a command-line utility that takes three arguments: IP address, start port, and end port. It then scans the specified range of ports on the given IP address and outputs the list of open and closed ports.
 
-3. **View Results**: The script will display the scan results on the command line, showing the port number, service name, port status, IP address, and banner (if available).
+**Requirements:**
 
-4. **Save Results (Optional)**: If an output file is specified, the script will save the scan results to a CSV file for further analysis.
+- Python 3.x
+- socket library (included in Python standard library)
 
-### Class: PortScanner
+**Usage:**
 
-The `PortScanner` class serves as the backbone of the Port Scanner script, offering functionalities for initializing the scanner, validating input parameters, scanning various protocols, retrieving service information, and presenting or saving scan results.
+To execute the script, follow the usage pattern below:
 
-### Methods
-1. `__init__(self, ip_address, start_port, end_port, protocol)`: Initializes the PortScanner object with the target IP address, port range, and protocol.
-   
-2. `validate_ip_address(self, ip_address)`: Validates the format of the IP address provided as input.
-   
-3. `validate_port(self, port)`: Validates the format and range of the port number provided as input.
-   
-4. `validate_input(self)`: Validates the input parameters provided by the user, including IP address, port numbers, and protocol.
-   
-5. `scan_ports(self)`: Initiates the port scanning process based on the specified protocol.
-   
-6. `scan_tcp_ports(self)`: Scans TCP ports within the specified range and retrieves information about open and closed ports along with service names and banners.
-   
-7. `scan_udp_ports(self)`: Scans UDP ports within the specified range and determines the status of each port.
-   
-8. `scan_icmp_ports(self)`: Scans ICMP ports and checks for valid ICMP Echo Reply responses.
-   
-9. `grab_banner_tcp(self, s)`: Retrieves the banner information from a TCP connection.
-   
-10. `create_icmp_request(self, packet_id, sequence)`: Creates an ICMP request packet.
-   
-11. `calculate_checksum(self, data)`: Calculates the checksum for ICMP packets.
-   
-12. `is_icmp_response_valid(self, response, packet_id)`: Validates ICMP Echo Reply responses.
-   
-13. `get_service_name(self, port, protocol)`: Retrieves the service name associated with a port.
-   
-14. `print_results(self)`: Prints the scan results to the console.
-   
-15. `save_results_to_csv(self, file_name)`: Saves the scan results to a CSV file.
+```
+python port_scanner.py <ip_address> <start_port> <end_port>
+```
 
-### Attributes
-- `ip_address`: The target IP address. (Type: str)
-- `start_port`: The starting port of the scan range. (Type: int)
-- `end_port`: The ending port of the scan range. (Type: int)
-- `protocol`: The protocol to use for scanning (TCP, UDP, ICMP). (Type: str)
-- `results`: A list to store the scan results. (Type: list)
+Where:
+- `<ip_address>`: The IP address of the target machine to scan.
+- `<start_port>`: The starting port number of the port range to scan.
+- `<end_port>`: The ending port number of the port range to scan.
 
-### Dependencies
-The Port Scanner script relies on the following standard Python libraries:
-- `socket`: For socket programming to establish connections and perform port scanning.
-- `struct`: For packing and unpacking binary data (used for ICMP packet construction).
-- `sys`: For system-specific functionality and error handling.
-- `csv`: For saving scan results to a CSV file.
-- `ipaddress`: For IP address validation.
+**Example:**
 
-### Functionality
-The Port Scanner script consists of the following components:
+```
+python port_scanner.py 192.168.1.100 1 1024
+```
 
-- **Input Validation**: Validates the input parameters provided by the user, including IP address, port numbers, and protocol.
+**Script Functionality:**
 
-- **Port Scanning**: Utilizes socket programming to scan for open ports on the specified host. It supports TCP, UDP, and ICMP protocols and scans ports within the specified range.
+The script performs the following actions:
 
-- **Banner Grabbing (TCP)**: For TCP ports, the script attempts to grab banners by establishing a connection to the open port and retrieving the service information.
+1. Parses command-line arguments to extract the IP address, start port, and end port.
+2. Creates an instance of the `PortScanner` class with the provided arguments.
+3. Initiates a port scanning process using the `scan_ports()` method of the `PortScanner` class.
+4. Checks each port in the specified range for openness using the `socket` library.
+5. Stores the results (open and closed ports) in separate lists.
+6. Prints the list of open and closed ports using the `print_results()` method of the `PortScanner` class.
 
-- **Result Presentation**: Presents the scan results in a tabular format on the command line, providing detailed information about each scanned port.
+**PortScanner Class:**
 
-- **Result Saving**: Optionally saves the scan results to a CSV file if an output file is specified by the user.
+The `PortScanner` class encapsulates the functionality required for port scanning. It includes the following attributes and methods:
 
-### Output
-The output of the `PortScanner` class methods includes detailed information about the scan results, including port number, service name, port status, IP address, and banner (if available).
+- **Attributes:**
+  - `ip_address`: IP address of the target machine.
+  - `start_port`: Starting port number of the port range.
+  - `end_port`: Ending port number of the port range.
+  - `open_ports`: List to store open ports.
+  - `closed_ports`: List to store closed ports.
 
-### Main Function
-The `main()` function parses command-line arguments, initializes the PortScanner object, performs port scans, prints results, and saves results to a CSV file.
+- **Methods:**
+  - `__init__(self, ip_address, start_port, end_port)`: Initializes the PortScanner object with the provided IP address, start port, and end port.
+  - `scan_ports(self)`: Scans the ports within the specified range and populates the `open_ports` and `closed_ports` lists accordingly.
+  - `print_results(self)`: Prints the lists of open and closed ports.
 
-### Execution
-The script executes the `main()` function when run as the main program, scanning TCP, UDP, and ICMP ports sequentially and saving the results to the specified output file.
-
-### Error Handling
-The script incorporates robust error handling to gracefully handle exceptions and unexpected scenarios. It provides informative error messages to guide users in troubleshooting any issues encountered during execution. An also error handling for various exceptions such as KeyboardInterrupt, socket errors, file-related errors, and general exceptions to ensure graceful termination and informative error messages.
-
-### Conclusion
-The Port Scanner script provides a versatile tool for network administrators and security professionals to analyze the status of ports on a target system, identify services running on those ports, and gather additional information where available. This enhanced documentation provides comprehensive details about the `PortScanner` class, its attributes, and methods, along with the expected output format. 
+**Conclusion:**
+The `port_scanner.py` script provides a simple yet effective solution for network port scanning tasks. By leveraging Python's socket library, it enables users to identify open and closed ports on a target machine within a specified port range. This tool can be utilized by network administrators, security professionals, and system analysts to assess network security and diagnose connectivity issues.
 
 ## **License**
 This project is licensed under the MIT License. See the [LICENSE](https://github.com/kavineksith/Automating-Daily-IT-Operations-with-Python-Integration/blob/main/LICENSE) file for details.
