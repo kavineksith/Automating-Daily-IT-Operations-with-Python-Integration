@@ -2,12 +2,14 @@ import json
 import os
 import smtplib
 import re
+import ssl
 import sys
 from email import encoders
 from email.mime.text import MIMEText
 from email.mime.base import MIMEBase
 from email.mime.multipart import MIMEMultipart
-from cryptography.fernet import Fernet # type: ignore
+from cryptography.fernet import Fernet
+
 
 class SecureEmailConfig:
     def __init__(self, config_file_path, key_file_path, passphrase):
@@ -67,8 +69,10 @@ class EmailSender:
             # subject = self.config['subject']
             # message = self.config['message']
 
+            context = ssl.create_default_context()
+
             # Connect to SMTP server
-            with smtplib.SMTP_SSL(smtp_server, smtp_port) as server:
+            with smtplib.SMTP_SSL(smtp_server, smtp_port, context=context) as server:
                 server.login(smtp_username, smtp_password)
                 server.sendmail(sender_email, receiver_email, msg.as_string())
         except (smtplib.SMTPException, ValueError, KeyError) as e:
@@ -108,8 +112,10 @@ class EmailSender:
                     part.add_header('Content-Disposition', f'attachment; filename="{os.path.basename(attachment)}"')
                     msg.attach(part)
 
+            context = ssl.create_default_context()
+
             # Connect to SMTP server
-            with smtplib.SMTP_SSL(smtp_server, smtp_port) as server:
+            with smtplib.SMTP_SSL(smtp_server, smtp_port, context=context) as server:
                 server.login(smtp_username, smtp_password)
                 server.sendmail(sender_email, receiver_email, msg.as_string())
         except (smtplib.SMTPException, ValueError, KeyError) as e:
@@ -187,12 +193,13 @@ def get_non_empty_input(prompt):
         user_input = input(prompt)
     return user_input
 
+
 def main():
     try:
-        # Define paramters and assigning values for them
-        config_file_path = 'config.json' # configuration file
-        key_file_path = 'encrypted_encryption_key.key' # encryption key file
-        passphrase = os.environ.get('SMTP_PASSPHRASE', b'MySuperSecurePassphrase') # passphrase for encryption
+        # Define parameters and assigning values for them
+        config_file_path = 'config.json'  # configuration file
+        key_file_path = 'encrypted_encryption_key.key'  # encryption key file
+        passphrase = os.environ.get('SMTP_PASSPHRASE', b'MySuperSecurePassphrase')  # passphrase for encryption
 
         # Get user input for email details
         sender_email = get_non_empty_input("Enter sender email address: ")
@@ -205,11 +212,12 @@ def main():
         email_sender = SecureEmailSender(config_file_path, key_file_path, passphrase)
         email_sender.send_email(sender_email, receiver_email, subject, message, attachments, template)
     except KeyboardInterrupt:
-            print("Process interrupted by the user.")
-            sys.exit(1)
+        print("Process interrupted by the user.")
+        sys.exit(1)
     except Exception as e:
-            print(f"An unexpected error occurred: {e}")
-            sys.exit(1)
+        print(f"An unexpected error occurred: {e}")
+        sys.exit(1)
+
 
 if __name__ == "__main__":
     main()
