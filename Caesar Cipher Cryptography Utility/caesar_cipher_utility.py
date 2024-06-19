@@ -58,8 +58,7 @@ class CaesarCipher:
 def get_user_choice():
     while True:
         try:
-            choice = int(input("Enter 1 for encryption, 2 for decryption, 3 for encryption with all shifts, "
-                               "4 for decryption with all shifts: "))
+            choice = int(input("Enter 1 for encryption, 2 for decryption, 3 for encryption with all shifts, 4 for decryption with all shifts: "))
             if choice not in [1, 2, 3, 4]:
                 raise ValueError("Invalid choice. Enter 1, 2, 3, or 4.")
             return choice
@@ -96,7 +95,7 @@ if __name__ == "__main__":
             for shift, decrypted_text in all_decryptions.items():
                 print(f"Shift {shift}: {decrypted_text}")
     except ValueError as ve:
-        print(f"Error: {ve}")
+        print(f"Value Error: {ve}")
         sys.exit(1)
     except KeyboardInterrupt:
         print("\nProcess interrupted by the user.")
