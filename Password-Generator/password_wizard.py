@@ -111,27 +111,36 @@ class PasswordGenerator:
 
         return value
 
+    @staticmethod
+    def pwd_wizard():
+        password_generator = PasswordGenerator()
+        pwd_category = password_generator.get_pwd_category()
+
+        try:
+            if pwd_category == 1:
+                password = password_generator.generate_password(password_generator.get_pwd_length())
+            elif pwd_category == 2:
+                password = password_generator.generate_secure_password(password_generator.get_pwd_length())
+            else:
+                raise ValueError("Invalid password category.")
+        except ValueError as ve:
+            print("Error generating password:", ve)
+            sys.exit(1)
+
+        return password
+
 def main():
-    password_generator = PasswordGenerator()
+    while True:
+        try:
+            genrated_password = PasswordGenerator().pwd_wizard()
+            print(f"Generated Password: {genrated_password}")
+        except KeyboardInterrupt:
+            print("Process interrupted by the user.")
+            sys.exit(1)
+        except Exception as e:
+            print(f"An error occurred: {str(e)}")
+            sys.exit(1)
 
-    try:
-        if password_generator.get_pwd_category() == 1:
-            password = password_generator.generate_password(password_generator.get_pwd_length())
-        elif password_generator.get_pwd_category() == 2:
-            password = password_generator.generate_secure_password(password_generator.get_pwd_length())
-        else:
-            raise ValueError("Invalid password category.")
-    except ValueError as ve:
-        print("Error generating password:", ve)
-        sys.exit(1)
-    except KeyboardInterrupt:
-        print("Process interrupted by the user.")
-        sys.exit(1)
-    except Exception as e:
-        print(f"An error occurred: {str(e)}")
-        sys.exit(1)
-
-    print(f"Generated Password: {password}")
 
 if __name__ == "__main__":
     main()
